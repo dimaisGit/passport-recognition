@@ -28,7 +28,7 @@ googleRecognize = async imagePath => { //absolute path is required
                 request.image.content = await image2base64(convertedImages[now]); // send data encoded by base64
                 console.log(`${__filename}: start recognizing page ${now}....`);
                 const client = new vision.ImageAnnotatorClient(); // one client per request
-                const [ recognizedData ] = await client.documentTextDetection(request);
+                const [ recognizedData ] = await client.textDetection(request);
                 const recognizedText = recognizedData.fullTextAnnotation ? recognizedData.fullTextAnnotation.text.toString() : '';
                 console.log(`${__filename}: recognized, ${convertedImages.length - now} pages left. Waiting....`);
                 result.push(recognizedText);
@@ -46,7 +46,7 @@ googleRecognize = async imagePath => { //absolute path is required
             request.image.content = await image2base64(imagePath);
             console.log(`${__filename}: start recognizing....`);
             const client = new vision.ImageAnnotatorClient();
-            const [ recognizedData ] = await client.documentTextDetection(request);
+            const [ recognizedData ] = await client.textDetection(request);
             const recognizedText = recognizedData.fullTextAnnotation.text.toString();
             result.push(recognizedText);
         } catch (err) {
