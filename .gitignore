@@ -1,2 +1,5 @@
 # Project exclude paths
 /node_modules/
+/TextRecognition-87be72d4c6fa.json
+/public/pasp1.pdf
+/TextRecognition-28bfdad2da71.json

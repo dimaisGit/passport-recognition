@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 var app = require('../app');
 var debug = require('debug')('passport-recognition:server');
 var http = require('http');
