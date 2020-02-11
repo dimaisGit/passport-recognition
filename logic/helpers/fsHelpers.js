@@ -23,9 +23,9 @@ const loadFileByUrl = async url => {
     try {
         console.log(`${__filename}: ${url} is downloading...`);
         const fileFormat = url.split('.').reverse()[0];
-        let fileName = `${__dirname}/${getRandomString(15)}.${fileFormat}`;
-        while (fs.existsSync(fileName))
-            fileName = getRandomString(15) + fileFormat;
+        let fullFilePath = `${__dirname}/${getRandomString(15)}.${fileFormat}`;
+        while (fs.existsSync(fullFilePath))
+            fullFilePath = getRandomString(15) + fileFormat;
 
         const { data, headers } = await axios.get(url, {
             responseType: 'stream',
@@ -40,22 +40,22 @@ const loadFileByUrl = async url => {
             total: parseInt(totalLength)
         });
 
-        const file = fs.createWriteStream(fileName);
+        const file = fs.createWriteStream(fullFilePath);
         data.on('data', (chunk) => progressBar.tick(chunk.length));
         data.pipe(file);
         return new Promise((resolve, reject) => {
             file.on('error', err => {
                 console.log(`${__filename}: there is error with url:${url} downloading: ${err}`);
-                reject({ err: `there is error with url:${url} downloading: ${err}` });
+                reject(`there is error with url:${url} downloading: ${err}`);
             });
             file.on('finish', () => {
-                console.log(`${__filename}: ${url} is successfully downloaded! File path: ${fileName}`);
-                resolve({ fileName });
+                console.log(`${__filename}: ${url} is successfully downloaded! File path: ${fullFilePath}`);
+                resolve(fullFilePath);
             });
         });
     } catch (err) {
         console.log(`${__filename}: there is some error with file downloading: ${err}`);
-        return { err: `there is error with url:${url} downloading: ${err}` };
+        throw new Error(`there is error with url:${url} downloading: ${err}`);
     }
 };
 

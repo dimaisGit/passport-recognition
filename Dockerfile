@@ -32,6 +32,5 @@ RUN npm install
 #google credentials
 
 COPY . /usr/src/app
-COPY TextRecognition-28bfdad2da71.json /usr/src/app
-RUN export GOOGLE_APPLICATION_CREDENTIALS="/usr/src/app/TextRecognition-28bfdad2da71.json"
+COPY TextRecognitionToken.json /usr/src/app
 CMD ["./node_modules/.bin/nodemon", "-L", "index.js"]

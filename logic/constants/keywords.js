@@ -1,0 +1,62 @@
+module.exports = {
+    NEW_LINE_KEYWORD: 'NEW_LINE',
+    VIN_CODE_KEYWORD: 'VIN: ',
+    CONTRACT_KEYWORD: 'ДОГОВОР ПОСТАВКИ № ',
+    ITN_KEYWORD: 'ИНН',
+    IEC_KEYWORD: 'КПП',
+    CA_KEYWORDS: [
+        'р/с',
+        'р/С',
+        'Р/с',
+        'Р/С'
+    ],
+    PHONE_KEYWORD: 'тел',
+    BANK_KEYWORDS: [
+        'в  банке',
+        'в банке',
+        'в банке:',
+        'в банке: ',
+        'банке',
+        'в '
+    ],
+    BIC_KEYWORD: 'БИК',
+    COAC_KEYWORD: [
+        'к/с',
+        'к/С',
+        'К/с',
+        'К/С'
+    ],
+
+    SUPPLIER_NAME_KEYWORD: 'Продавец: ',
+    SUPPLIER_ADDRESS_KEYWORD: 'Адрес: ',
+    SUPPLIER_ITN_AND_IEC_KEYWORD: 'ИНН/КПП продавца: ',
+    SENDER_KEYWORD: 'Грузоотправитель и его адрес: ',
+    RECIPIENT_KEYWORD: 'Грузополучатель и его адрес: ',
+    PAYER_NAME_KEYWORD: 'Покупатель: ',
+    PAYER_ADDRESS_KEYWORD: 'Адрес: ',
+    PAYER_ITN_AND_IEC_KEYWORD: 'ИНН/КПП покупателя: ',
+
+    SUPPLY_POINT_4_KEYWORD: '4. ПРИЕМ-ПЕРЕДАЧА ТОВАРА',
+    SUPPLY_POINT_4_2_KEYWORD: '4.2',
+    SUPPLY_POINT_14_KEYWORD: '14. РЕКВИЗИТЫ И ПОДПИСИ СТОРОН',
+    SUPPLY_RECIPIENT_KEYWORD: 'Грузополучателем Товара является:',
+    SUPPLY_SENDER_KEYWORD: 'Грузоотправителем Товара является: ',
+    SUPPLY_LOCATION_KEYWORD: 'местонахождение',
+    SUPPLY_END_OF_SENDER_KEYWORD: '4.2',
+    SUPPLY_REQUISITES_KEYWORD: 'РЕКВИЗИТЫ',
+    SUPPLY_SUPPLIER_NAME_KEYWORD: 'Поставщик:',
+    SUPPLY_SUPPLIER_NAME_TYPE_2_KEYWORD: 'Продавец',
+    SUPPLY_PAYER_NAME_KEYWORD: 'Покупатель',
+    SUPPLY_ITN_AND_IEC_KEYWORD: 'ИНН/КПП',
+    SUPPLY_LEGAL_ADDRESS_KEYWORD: 'Юридический адрес:',
+    SUPPLY_POINT_14_END_OF_ADDRESS_KEYWORD: 'Почтовый адрес',
+    SUPPLY_BANK_DETAILS_KEYWORD: 'Банковские реквизиты',
+    SUPPLY_BANK_NAME_KEYWORD: 'в банке:',
+    SUPPLY_TYPE_2_START_POINT: 'АДРЕСА, РЕКВИЗИТЫ И ПОДПИСИ СТОРОН',
+    SUPPLY_TYPE_2_SENDER_KEYWORD: 'Грузоотправитель и получатель денежных средств',
+    PTS_VIN_KEYWORD: 'Идентификационный номер (VIN)',
+    PTS_MODEL_KEYWORD: 'Марка',
+    PTS_COMMERCIAL_NAME: 'Коммерческое наименование',
+    PTS_CAR_CATEGORY: 'Категория транспортного средства в',
+    PTS_TRANSPORT_NAME: 'Наименование транспортного средства,определяемое его назначением'
+};
