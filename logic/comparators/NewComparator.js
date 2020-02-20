@@ -122,34 +122,71 @@ class NewComparator {
         const invoice = NewComparator.getDocByType(INVOICE_TYPE, first, second, third);
 
         return {
-            sender_name: NewComparator.compareVariables('sender.name', PL, SC, invoice),
-            sender_address: NewComparator.compareVariables('sender.address', PL, SC, invoice),
-            sender_IEC: NewComparator.compareVariables('sender.IEC', PL, SC),
+            comparingData: {
+                sender_name: NewComparator.compareVariables('sender.name', PL, SC, invoice),
+                sender_address: NewComparator.compareVariables('sender.address', PL, SC, invoice),
+                sender_IEC: NewComparator.compareVariables('sender.IEC', PL, SC),
 
-            recipient_name: NewComparator.compareVariables('recipient.name', PL, SC, invoice),
-            recipient_address: NewComparator.compareVariables('recipient.address', PL, SC, invoice),
-            recipient_IEC: NewComparator.compareVariables('recipient.IEC', PL, SC),
+                recipient_name: NewComparator.compareVariables('recipient.name', PL, SC, invoice),
+                recipient_address: NewComparator.compareVariables('recipient.address', PL, SC, invoice),
+                recipient_IEC: NewComparator.compareVariables('recipient.IEC', PL, SC),
 
-            supplier_name: NewComparator.compareVariables('supplier.name', PL, SC,  invoice),
-            supplier_address: NewComparator.compareVariables('supplier.address', PL, SC, invoice),
-            supplier_ITN: NewComparator.compareVariables('supplier.ITN', PL, SC),
-            supplier_IEC: NewComparator.compareVariables('supplier.IEC', PL, SC),
-            supplier_CA: NewComparator.compareVariables('supplier.CA', PL, SC),
-            supplier_bank: NewComparator.compareVariables('supplier.bank', PL, SC),
-            supplier_BIC: NewComparator.compareVariables('supplier.BIC', PL, SC),
-            supplier_CoAc: NewComparator.compareVariables('supplier.CoAc', PL, SC),
+                supplier_name: NewComparator.compareVariables('supplier.name', PL, SC,  invoice),
+                supplier_address: NewComparator.compareVariables('supplier.address', PL, SC, invoice),
+                supplier_ITN: NewComparator.compareVariables('supplier.ITN', PL, SC),
+                supplier_IEC: NewComparator.compareVariables('supplier.IEC', PL, SC),
+                supplier_CA: NewComparator.compareVariables('supplier.CA', PL, SC),
+                supplier_bank: NewComparator.compareVariables('supplier.bank', PL, SC),
+                supplier_BIC: NewComparator.compareVariables('supplier.BIC', PL, SC),
+                supplier_CoAc: NewComparator.compareVariables('supplier.CoAc', PL, SC),
 
-            payer_name: NewComparator.compareVariables('payer.name', PL, SC, invoice),
-            payer_ITN: NewComparator.compareVariables('payer.ITN', PL, SC, invoice),
-            payer_IEC: NewComparator.compareVariables('payer.IEC', PL, SC, invoice),
-            payer_address: NewComparator.compareVariables('payer.address', PL, SC, invoice),
-            payer_CA: NewComparator.compareVariables('payer.CA', PL, SC),
-            payer_bank: NewComparator.compareVariables('payer.bank', PL, SC),
-            payer_BIC: NewComparator.compareVariables('payer.BIC', PL, SC),
-            payer_CoAc: NewComparator.compareVariables('payer.CoAc', PL, SC),
+                payer_name: NewComparator.compareVariables('payer.name', PL, SC, invoice),
+                payer_ITN: NewComparator.compareVariables('payer.ITN', PL, SC, invoice),
+                payer_IEC: NewComparator.compareVariables('payer.IEC', PL, SC, invoice),
+                payer_address: NewComparator.compareVariables('payer.address', PL, SC, invoice),
+                payer_CA: NewComparator.compareVariables('payer.CA', PL, SC),
+                payer_bank: NewComparator.compareVariables('payer.bank', PL, SC),
+                payer_BIC: NewComparator.compareVariables('payer.BIC', PL, SC),
+                payer_CoAc: NewComparator.compareVariables('payer.CoAc', PL, SC),
 
-            car: NewComparator.compareVariables('car', PL, invoice),
-            carVin: NewComparator.compareVariables('carVin', PL, invoice)
+                car: NewComparator.compareVariables('car', PL, invoice),
+                carVin: NewComparator.compareVariables('carVin', PL, invoice)
+            },
+            columnKeys: [
+                'PL',
+                'SC',
+                'invoice'
+            ],
+            realNames: [
+                'Название отправителя',
+                'Адрес отправителя',
+                'КПП отправителя',
+
+                'Название получателя',
+                'Адрес получателя',
+                'КПП получателя',
+
+                'Название поставщика',
+                'Адрес поставщика',
+                'ИНН поставщика',
+                'КПП поставщика',
+                'Р/С поставщика',
+                'Банк поставщика',
+                'БИК поставщика',
+                'К/С поставщика',
+
+                'Название плательщика',
+                'ИНН плательщика',
+                'КПП плательщика',
+                'Адрес плательщика',
+                'Р/С плательщика',
+                'Банк плательщика',
+                'БИК плательщика',
+                'К/С плательщика',
+
+                'Название машины',
+                'ВИН номер машины'
+            ]
         }
     }
 }

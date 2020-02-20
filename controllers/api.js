@@ -10,6 +10,7 @@ const NewComparator = require('../logic/comparators/NewComparator');
 class Api {
     static async compareDocs(req, res) {
         const { pl_url, invoice_url, supply_url } = req.body;
+        console.log(req.body);
         try {
             if (!pl_url || !invoice_url || !supply_url)
                 throw new Error('U didnt pass required params');
