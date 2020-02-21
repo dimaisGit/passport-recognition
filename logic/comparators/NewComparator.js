@@ -113,7 +113,6 @@ class NewComparator {
                 }
             }
         }
-
     }
 
     static async compareDocs(first, second, third) {
@@ -152,6 +151,11 @@ class NewComparator {
                 car: NewComparator.compareVariables('car', PL, invoice),
                 carVin: NewComparator.compareVariables('carVin', PL, invoice)
             },
+            columnNames: [
+                'Товарная накладная',
+                'Договор',
+                'Счет-фактура'
+            ],
             columnKeys: [
                 'PL',
                 'SC',
